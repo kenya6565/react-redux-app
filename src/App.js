@@ -1,11 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './components/Navbar';
+import { useSelector } from "react-redux";
+import "./App.css";
+import CartContainer from "./components/CartContainer";
+import Navbar from "./components/Navbar";
 function App() {
+  const { cartItems } = useSelector((state) => state.cart);
   return (
-   <main>
-    <Navbar></Navbar>
-   </main>
+    <main>
+      <Navbar />
+      <CartContainer />
+    </main>
   );
 }
 
