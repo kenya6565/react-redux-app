@@ -24,9 +24,15 @@ const cartSlice = createSlice({
         return itemId !== item.id;
       });
     },
+    increase: (state, action) => {
+      const cartItem = state.cartItems.find(
+        (item) => item.id === action.payload
+      );
+      cartItem.amount += 1;
+    },
   },
 });
 
 export const { clearCart } = cartSlice.actions;
-export const { removeItem } = cartSlice.actions;
+export const { removeItem, increase } = cartSlice.actions;
 export default cartSlice.reducer;
