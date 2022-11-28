@@ -14,20 +14,14 @@ const cartSlice = createSlice({
   reducers: {
     // これがactionの名前になる
     clearCart: () => {
-      // state.cartItems = [];
       return { cartItems: [], amount: 0, total: 0 };
     },
 
     removeItem: (state, action) => {
-      // action.type = 'cart/removeItem'
-
-      // console.log(action.payload);
-      // console.log(cartItems[action.payload - 1]);
-
       const itemId = action.payload;
       state.cartItems = state.cartItems.filter((item) => {
-        // itemIdのオブジェクトは除外する
-        return itemId  !== item.id;
+        // 削除したいidじゃない場合は残す
+        return itemId !== item.id;
       });
     },
   },

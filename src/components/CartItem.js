@@ -12,12 +12,14 @@ const CartItem = (props) => {
       <div>
         <h4>{title}</h4>
         <h4 className="item-price">{price}円</h4>
-        <button className="remove-btn">削除</button>
+        <button className="remove-btn" onClick={() => dispatch(removeItem(id))}>
+          削除
+        </button>
         <button className="amount-btn">
           <PlusIcon />
         </button>
         <p className="amount">{amount}</p>
-        <button className="amount-btn" onClick={() => dispatch(removeItem(id))}>
+        <button className="amount-btn">
           <MinusIcon />
         </button>
       </div>
