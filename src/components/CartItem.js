@@ -19,7 +19,16 @@ const CartItem = (props) => {
           <PlusIcon />
         </button>
         <p className="amount">{amount}</p>
-        <button className="amount-btn" onClick={() => dispatch(decrease(id))}>
+        <button
+          className="amount-btn"
+          onClick={() => {
+            if (amount === 1) {
+              dispatch(removeItem(id));
+              return;
+            }
+            dispatch(decrease(id));
+          }}
+        >
           <MinusIcon />
         </button>
       </div>
