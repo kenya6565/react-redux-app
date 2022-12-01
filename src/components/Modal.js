@@ -12,7 +12,10 @@ const Modal = () => {
         <div className="btn-container">
           <button
             className="btn confirm-btn"
-            onClick={() => dispatch(clearCart(), closeModal())}
+            onClick={() => {
+              dispatch(clearCart());
+              dispatch(closeModal());
+            }}
           >
             OK
           </button>
